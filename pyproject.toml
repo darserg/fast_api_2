@@ -1,0 +1,36 @@
+[tool.poetry]
+name = "fast-api-2"
+version = "0.1.0"
+description = "Blogicum-style backend on FastAPI"
+readme = "README.md"
+package-mode = false
+
+[tool.poetry.dependencies]
+python = "^3.12"
+aiosqlite = "*"
+asyncpg = "*"
+alembic = "*"
+boto3 = "*"
+dishka = "*"
+fastapi = "*"
+pydantic = { extras = ["email"], version = "*" }
+passlib = { extras = ["bcrypt"], version = "*" }
+bcrypt = "4.0.1"
+sentry-sdk = { extras = ["fastapi"], version = "*" }
+opentelemetry-sdk = "*"
+opentelemetry-instrumentation-fastapi = "*"
+opentelemetry-instrumentation-sqlalchemy = "*"
+pydantic-settings = "*"
+python-jose = { extras = ["cryptography"], version = "*" }
+python-multipart = "*"
+sqlalchemy = "*"
+uvicorn = { extras = ["standard"], version = "*" }
+
+[tool.poetry.group.dev.dependencies]
+httpx = "*"
+pytest = "*"
+pytest-asyncio = "*"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
