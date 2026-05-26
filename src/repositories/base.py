@@ -47,7 +47,7 @@ class BaseRepository(Generic[T]):
         query: Select[tuple[T]] | None = None,
     ) -> tuple[Sequence[T], int]:
         try:
-            current_query = query or self._base_query()
+            current_query = query if query is not None else self._base_query()
             total_query = select(func.count()).select_from(current_query.subquery())
             total_result = await self.session.execute(total_query)
             total = int(total_result.scalar_one())
